@@ -1,0 +1,81 @@
+ENGR 408 Truss Issues Prototype Information Desk
+fprintf('Welcome to the Detroit Wayne County Airport Cultural Center! \n')
+option= menu('What would you like to do?','See My Gate Location','Cultural Center Information');
+switch option
+    case 1
+terminal = menu('Flight Terminal: ','McNamara','North');
+switch terminal
+    case 1
+        gate_letter = input('Enter your Concourse: ','s');
+        switch gate_letter 
+            case 'A'
+                gate_number = input('Enter your Gate Number (number only): ');
+                if 0<gate_number < 36
+                    fprintf('Looking towards the Westin Reflections Restaurant, turn right and walk in that direction towards Gate %i. \n',gate_number)
+                elseif gate_number == 36
+                    fprintf('Looking towards the Westin Reflections Restaurant, turn directly behind you and walk towards Gate %i. \n',gate_number)
+                elseif 36 < gate_number < 79
+                    fprintf('Looking towards the Westin Reflections Restaurant, turn left and walk in that direction towards Gate %i. \n',gate_number)
+                else
+                    error('Enter a valid gate number.')
+                end
+            case 'B'
+                 gate_number = input('Enter your Gate Number (number only): ')
+                   if 0<gate_number<22 
+                       fprintf('Looking towards the Westin Reflections Restaurant, turn left, walk towards center of aisle then another left towards Gate 38. \n')
+                       fprintf('Afterwards, turn left out of the escalator and walk towards Gate %i. \n', gate_number)
+                   else
+                       error('Enter a valid gate number.')
+                   end
+            case 'C'
+                 gate_number = input('Enter your Gate Number (number only): ')
+                  fprintf('Looking towards the Westin Reflections Restaurant, turn right, walk towards center of aisle then another left towards Gate 38. \n')
+                  fprintf('Afterwards, turn left out of the escalator and walk towards Gate %i. \n', gate_number)
+            otherwise
+                error('Enter a valid terminal')
+        end
+    case 2
+         gate_letter = input('Enter your Concourse: ','s')
+        switch gate_letter 
+            case 'D'
+                gate_number = input('Enter your Gate Number (number only): ');
+                fprintf('To access the other terminal, take the shuttle service inside the Westin Reflections.')
+            otherwise
+                error('Enter a proper terminal number.')
+  
+        end
+end
+    case 2
+        culture_center_info=menu('What would you like to know more about?','Food/Beverge','Merchandise','Tours','Delta Lounge');
+        switch culture_center_info
+            case 1
+                food=menu('Which location would you like to know more about?','Ford''s Burgers and Shakes','Greektown Gyros and Cuisine','The One and Only Detroit Sportsbar','Motown Adventures');
+       switch food
+           case 1
+              fprintf('A rockin'' American-themed restaurant that highlights the massive automobile industry that started right here in Detroit')
+          fprintf('Directions: Looking directly at the Westin Reflections, turn around and walk into the restaurant.')
+          fprintf('Click here for menu.')
+           case 2
+               fprintf('See Detroit''s best Greek cuisine right in the heart of the airport! We offer gyros, taramasalata, moussaka, and other delicious bites right here!')
+          fprintf('Directions: Looking directly at the Westin Reflections, look directly to the right towards the corridor. You will see the restaurant on the right side of the corridor.')
+         fprintf('Click here for menu.')
+           case 3
+               fprintf('Come watch Detroit''s best and other sports. That''s all we really need to say!')
+           fprintf('Directions: Looking directly at the Westin Reflections, make a right and walk towards Gate A34')
+          fprintf('Click here for menu.')
+           case 4
+               fprintf('Experience the music that made Detroit famous, without leaving the airport! Motown will make you feel rockin'' and groovy before even boarding the plane!')
+          fprintf('Directions: Looking directly at the Westin Reflections, make a right and walk towards Gate A35.')
+      fprintf('Click here for menu.')
+       end
+            case 2
+                fprintf('Buy shirts, hats, and other Detroit merchandise right within the Detroit airport!')
+                fprintf('Directions: Looking towards the Westin Reflections, turn directly left of the building and you will see the concessions center!')
+    case 3 
+        fprintf('We have tours available to see the airport in a more private manner!')
+        fprintf('See the hotel receptionist at the Westin Reflections or click here for more details!.')
+    case 4
+        fprintf('If you are a Delta Rewards Member, you can wait for your flight and relax in peace in our exclusive lounge!')
+        fprintf('Click here for more details.')
+        end
+        end
